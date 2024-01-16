@@ -1,0 +1,163 @@
+<mxfile host="app.diagrams.net" modified="2024-01-09T09:37:02.231Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="qZ4Ctb-LOF3igZWmjlfU" version="22.1.17" type="device">
+  <diagram name="Page-1" id="sX8V1viMPEMWeUoVz-6L">
+    <mxGraphModel dx="1050" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-4" value="Ny Uppgift" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="90" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-5" value="Tasklist" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="379.5" y="40" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-11" value="Compilation List" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="279.5" y="40" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-12" value="Activity List" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="479.5" y="40" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-15" value="Redigera/Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="582.5" y="140" width="125" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-17" value="Datum" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="142.5" y="140" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-18" value="Aktivitet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="362.5" y="140" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-19" value="Beskrivning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="472.5" y="140" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-31" value="Lägg Till" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="582.5" y="180" width="125" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-32" value="Skriv här" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="472.5" y="180" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-37" value="Skriv här" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="362.5" y="180" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-38" value="Ange datum här" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="142.5" y="180" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-39" value="Redigera/Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="583" y="250" width="125" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-40" value="Skapade något häftigt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="473" y="250" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-41" value="PHP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="363" y="250" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-42" value="25.02.2023" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="143" y="250" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-44" value="Tasklist" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="460" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-47" value="Compilation List" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="460" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-48" value="Activity List" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="460" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-50" value="Tids spann" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="580" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-51" value="Total tid i timmar" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="580" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-55" value="14" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="620" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-56" value="20.02.2023&lt;br&gt;-30.02.2023" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="620" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-59" value="30" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-60" value="20.02.2023&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;-30.02.2023" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-61" value="Redigera" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="722" y="40" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-62" value="Radera" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="782" y="40" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-63" value="Tid i timmar" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="252.5" y="140" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-64" value="Ange antal timmar här" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="252.5" y="180" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-65" value="2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="253" y="250" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-66" value="Aktivitet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="580" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-67" value="PHP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="620" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-68" value="CSS" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="680" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-69" value="Tasklist" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="377.75" y="880" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-70" value="Compilation List" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="277.75" y="880" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-71" value="Activity List" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="477.75" y="880" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-78" value="Aktivitet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="267.75" y="950" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-79" value="PHP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="267.25" y="1060" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-80" value="CSS" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="267.25" y="1120" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-81" value="Skapa/Redigera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="477.75" y="950" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-82" value="Redigera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="477.25" y="1060" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-83" value="Redigera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="476.75" y="1120" width="90.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-85" value="Skriv in ny Aktivitet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="267.25" y="1000" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-86" value="Lägg Till" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="477.25" y="1000" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-87" value="Ange tid spann i datum" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="352.5" y="520" width="157.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-88" value="Redigera/Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="582.5" y="310" width="125" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-89" value="Skapade något häftigt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="472.5" y="310" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-90" value="CSS" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="362.5" y="310" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-91" value="25.02.2023" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="142.5" y="310" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-92" value="6" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="252.5" y="310" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qDCknuTPeDPyfFPr4jgN-93" value="Tidsperiod" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="90" width="70" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
