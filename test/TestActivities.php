@@ -183,10 +183,108 @@ function test_SparaNyAktivitet(): string {
 function test_UppdateraAktivitet(): string {
     $retur = "<h2>test_UppdateraAktivitet</h2>";
 
+    $uppdateraAktivitet = "Aktivitet" . time();
+
     try {
-        $retur .= "<p class='error'>Inga tester implementerade</p>";
+        // Koppla databas
+        $db = connectDb();
+
+        // Starta transaktion
+        $db->beginTransaction();
+
+    // Misslyckas med att uppdatera post med id=-1
+    $svar = uppdateraAktivitet('-1', 'Aktivitet');
+        if ($svar->getStatus() === 400) {
+            $retur .= "<p class='ok'>Uppdatera post med id=-1 misslyckades, som förväntat</p>";
+        } else {
+            $retur .= "<p class='error'>Uppdatera post med id=-1 returnerade " . $svar -> getStatus() 
+            . "  istället för föväntat 400</p>";
+        }
+
+    // Misslyckas med att uppdatera post med id=0
+    $svar = uppdateraAktivitet('0', 'Aktivitet');
+        if ($svar->getStatus() === 400) {
+            $retur .= "<p class='ok'>Uppdatera post med id=0 misslyckades, som förväntat</p>";
+        } else {
+            $retur .= "<p class='error'>Uppdatera post med id=0 returnerade " . $svar -> getStatus() 
+            . "  istället för föväntat 400</p>";
+        }
+
+    // Misslyckas med att uppdatera post med id=3,14
+    $svar = uppdateraAktivitet('3,14', 'Aktivitet');
+        if ($svar->getStatus() === 400) {
+            $retur .= "<p class='ok'>Uppdatera post med id=-3,14 misslyckades, som förväntat</p>";
+        } else {
+            $retur .= "<p class='error'>Uppdatera post med id=3,14 returnerade " . $svar -> getStatus() 
+            . "  istället för föväntat 400</p>";
+        }
+
+    // Misslyckas med att uppdatera aktivitet
+    $svar = uppdateraAktivitet('1', '');
+        if ($svar->getStatus() === 400) {
+            $retur .= "<p class='ok'>Uppdatera post med tom aktivitet misslyckades, som förväntat</p>";
+        } else {
+            $retur .= "<p class='error'>Uppdatera post med tom aktivitet returnerade " . $svar -> getStatus() 
+            . "  istället för föväntat 400</p>";
+        }
+
+
+    // Uppdatera med samma information misslyckas
+    $aktivitet='Aktivitet' . time();
+    $svar = sparaNyAktivitet('aktivitet' . time());
+        if ($svar->getStatus() === 200) {
+            $nyttId=$svar->getContent()->id;
+        } else {
+            throw new Exception("Spara aktivitet för uppdatering misslyckades");
+        }
+
+
+    // Lyckas med att uppdatera aktivitet
+    $svar = uppdateraAktivitet("$nyttId", "NY" . $aktivitet);
+        if ($svar->getStatus()===200 && $svar->getContent()->result===true) {
+            $retur .= "<p class='ok'>Uppdatera post med id=$nyttId lyckades</p>";
+        } else {
+            $retur .= "<p class='error'>Uppdatera post med id=$nyttId misslyckades<br>"
+            . "Status:" . $svar->getStatus() . " Returnerades med följande innehåll:<br> "
+                . print_r($svar->getContent(), true) ."</p>";
+        }
+
+    // Misslyckas med att uppdatera aktivitet som inte finns
+    $nyttId++;
+    $svar = uppdateraAktivitet("$nyttId", "What ever");
+    if ($svar->getStatus()===200 && $svar->getContent()->result===false) {
+        $retur .= "<p class='ok'>Uppdatera post med id=$nyttId misslyckades, som förväntat</p>";
+    } else {
+        $retur .= "<p class='error'>Uppdatera post med id=$nyttId misslyckades<br>";
+    }
+    
+
+    // Misslyckas med att uppdatera aktivitet som redan finns
+    $svar = sparaNyAktivitet($aktivitet);
+    if ($svar->getStatus() === 200) {
+        $nyttId=$svar->getContent()->id;
+    } else {
+        throw new Exception("Spara aktivitet för uppdatering misslyckades");
+    }
+
+
+    if ($svar->getStatus()===400 && $svar->getContent()->result===true) {
+        $retur .= "<p class='ok'>Uppdatera post som redan finns med id=$nyttId misslyckades</p>";
+    } else {
+        $retur .= "<p class='error'>Uppdatera post som redan finns med id=$nyttId misslyckades<br>"
+        . "Status:" . $svar->getStatus() . " Returnerades med följande innehåll:<br> "
+            . print_r($svar->getContent(), true) ."</p>";
+    }
+
+
+
     } catch (Exception $ex) {
         $retur .= "<p class='error'>Något gick fel, meddelandet säger:<br> {$ex->getMessage()}</p>";
+    } finally {
+        // Återställa databasen
+        if ($db) {
+            $db->rollBack();
+        }
     }
 
     return $retur;

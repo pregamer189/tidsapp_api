@@ -104,7 +104,7 @@ function hamtaEnskildAktivitet(string $id): Response {
 
 function sparaNyAktivitet(string $aktivitet): Response {
     // Kontrollera indata - resna bort onödiga teckan
-    $kontrolleradAktivitet = filter_var($aktivitet, FILTER_SANITIZE_ENCODED);
+    $kontrolleradAktivitet = filter_var($aktivitet, FILTER_SANITIZE_SPECIAL_CHARS);
 
     
     // Kontrollera att aktivitet inte är tom!
@@ -150,7 +150,44 @@ function sparaNyAktivitet(string $aktivitet): Response {
  * @return Response
  */
 function uppdateraAktivitet(string $id, string $aktivitet): Response {
-}
+    // Kontrollera indata
+    $kontrolleradId= filter_var($id, FILTER_VALIDATE_INT);
+    $kontrolleradAktivitet = filter_var($aktivitet, FILTER_SANITIZE_SPECIAL_CHARS);
+    $kontrolleradAktivitet = trim($kontrolleradAktivitet);
+
+    if ($kontrolleradId === false || $kontrolleradId <1 || $kontrolleradAktivitet === "") {
+        $retur = new stdClass();
+        $retur->error = ['bad request', 'Felaktig indata till uppdatera aktivitet'];
+        return new Response($retur, 400);
+    }
+    try {
+        // Koppla databas
+        $db = connectDb();
+
+        // Förbered fråga
+        $stmt = $db->prepare("UPDATE aktiviteter SET namn = :aktivitet WHERE id = :id");
+        $stmt->execute([":aktivitet" => $kontrolleradAktivitet, ":id" => $kontrolleradId]);
+
+        // Hantera svar
+        if ($stmt->rowCount() === 1) {
+          echo "$kontrolleradId";
+            $retur = new stdClass();
+            $retur->result=true;
+            $retur->message = ['Uppdatering lyckades', '1 post uppdaterades'];
+            return new Response($retur);
+        } else {
+              $retur = new stdClass();
+            $retur->result=false;
+            $retur->message = ['Uppdatering misslyckades', 'ingen rad uppdaterades'];
+            return new Response($retur, 200);
+        }
+        } catch (Exception $e) {
+            $retur= new stdClass();
+            $retur->error= ['bad request', 'Fel vid uppdatering', $e->getMessage()];
+            return new Response($retur, 400);
+            
+        }
+    }
 
 /**
  * Raderar en aktivitet med angivet id
@@ -158,4 +195,5 @@ function uppdateraAktivitet(string $id, string $aktivitet): Response {
  * @return Response
  */
 function raderaAktivetet(string $id): Response {
+
 }
