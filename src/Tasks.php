@@ -120,7 +120,72 @@ function hamtaSida(string $sida): Response {
  * @return Response
  */
 function hamtaDatum(string $from, string $tom): Response {
-    
+    // Kontrollera indata
+    $fromDate = DateTimeImmutable::createFromFormat("Y-m-d", $from);
+    $tomDate = DateTimeImmutable::createFromFormat("Y-m-d", $tom);
+    $datumFel = [];
+
+    if ($fromDate === false) {
+        $datumFel[] = "Ogiltigt från-datum";
+    }
+
+    if ($tomDate === false) {
+        $datumFel[] = "Ogiltigt till-datum";
+    }
+
+
+    if($fromDate && $fromDate->format("Y-m-d")!==$from){
+        $datumFel[] = "Ogiltigt angivet från-datum";
+    }
+
+    if($tomDate && $tomDate->format("Y-m-d")!==$tom){
+        $datumFel[] = "Ogiltigt angivet till-datum";
+    }
+
+
+    if ($fromDate && $tomDate && $fromDate->format("Y-m-d") > $tomDate->format("Y-m-d")) {
+        $datumFel[] = "Från-datum får inte vara större än till-datum";
+    }
+
+
+    if (count($datumFel) > 0) {
+        $retur = new stdClass();
+        $retur->error = $datumFel;
+        array_unshift($retur->error, 'bad request');
+        return new Response($retur, 400);
+    }
+
+    // Koppla databas
+    $db = connectDb();
+
+    // Exekvera SQL
+    $stmt = $db->prepare("SELECT u.id, datum, tid, beskrivning, aktivitetId, namn "
+            . "FROM uppgifter u INNER JOIN aktiviteter a ON aktivitetId=aktivitetid=a.id "
+            . "WHERE datum BETWEEN :from AND :to "
+            . "ORDER BY datum");
+        $stmt->execute(["from" => $fromDate->format("Y-m-d"), "to" => $tomDate->format("Y-m-d")]);
+
+        $result=$stmt->fetchAll();
+
+
+        $uppgifter = [];
+        foreach ($result as $row) {
+            $rad = new stdClass();
+            $rad->id = $row["id"];
+            $rad->aktivitetId = $row["aktivitetId"];
+            $rad->date = $row["datum"];
+            $tid = new DateTime($row["tid"]);
+            $rad->time = $tid->format("H:i");
+            $rad->activity = $row["namn"];
+            $rad->description = $row["beskrivning"];
+            $uppgifter[] = $rad;
+        }
+
+    // Returnera svar
+    $retur = new stdClass();
+    $retur->tasks = $uppgifter;
+    return new Response($retur);
+
 }
 
 /**
