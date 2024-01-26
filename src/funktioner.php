@@ -55,12 +55,5 @@ function kontrolleraIndata(array $postdata):array {
     if ($aktivitet->getStatus() === 400) {
         $retur[] = "Angivet aktivitets id saknas";
     }
-
-    // Ta bort konstiga tecken från beskrivning $postdata["description"]
-    if (trim(filter_var($postdata["description"], FILTER_SANITIZE_SPECIAL_CHARS)) === "") {
-        $retur[] = "Beskrivning saknas";
-    }
-
-
     return $retur;
 }

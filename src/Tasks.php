@@ -221,7 +221,7 @@ function sparaNyUppgift(array $postData): Response {
     $stmt = $db->prepare("INSERT INTO uppgifter (datum, tid, beskrivning, aktivitetId) "
             . "VALUES (:datum, :tid, :beskrivning, :aktivitetId)");
     $stmt->execute(['datum'=>$postData["date"], 'tid'=>$postData["time"], 
-                    'beskrivning'=>trim(filter_var($postData["description"], FILTER_SANITIZE_SPECIAL_CHARS)),
+                    'beskrivning'=>trim(filter_var($postData["description"]??'', FILTER_SANITIZE_SPECIAL_CHARS)),
                     'aktivitetId'=>$postData["activityId"]]);
 
     // Kontrollera svar

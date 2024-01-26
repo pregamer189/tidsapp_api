@@ -2,6 +2,9 @@
 
 declare (strict_types=1);
 require_once __DIR__ . '/funktioner.php';
+require_once __DIR__ . '/Route.php';
+require_once __DIR__ . '/Response.php';
+require_once __DIR__ . '/RequestMethod.php';
 
 /**
  * Läs av rutt-information och anropa funktion baserat på angiven rutt
@@ -43,19 +46,19 @@ function hamtaAllaAktiviteter(): Response {
     $db = connectDb();
 
     // Hämta alla aktiviteter
-    $result = $db->query("SELECT id, namn FROM aktiviteter");
+    $result = $db->query("SELECT id, Namn FROM aktiviteter");
 
     // Skapa returvärde
     $retur = [];
     foreach ($result as $item) {
         $post=new stdClass();
         $post->id = $item["id"];
-        $post->namn = $item["namn"];
+        $post->activity = $item["Namn"];
         $retur[] = $post;
     }
 
     // Skicka svar
-    return new Response($retur);
+    return new Response(["activities"=>$retur]);
 }
 
 /**
@@ -77,7 +80,7 @@ function hamtaEnskildAktivitet(string $id): Response {
     $db = connectDb();
 
     //Skicka fråga
-    $stmt = $db->prepare("SELECT id, namn FROM aktiviteter WHERE id = :id");
+    $stmt = $db->prepare("SELECT id, Namn FROM aktiviteter WHERE id = :id");
     $result = $stmt->execute([":id" => $kontrolleratId]);
 
 
@@ -85,7 +88,7 @@ function hamtaEnskildAktivitet(string $id): Response {
     if ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
         $retur = new stdClass();
         $retur->$id = $row['id'];
-        $retur->activity = $row['namn'];
+        $retur->activity = $row['Namn'];
         return new Response($retur);
     } else {
         $retur = new stdClass();
@@ -120,7 +123,7 @@ function sparaNyAktivitet(string $aktivitet): Response {
 
 
         // Exekvera frågan
-        $stmt = $db->prepare("INSERT INTO aktiviteter (namn) VALUES (:aktivitet)");
+        $stmt = $db->prepare("INSERT INTO aktiviteter (Namn) VALUES (:aktivitet)");
         $svar= $stmt->execute([":aktivitet" => $kontrolleradAktivitet]);
 
 
@@ -149,6 +152,7 @@ function sparaNyAktivitet(string $aktivitet): Response {
  * @param string $aktivitet Ny text
  * @return Response
  */
+
 function uppdateraAktivitet(string $id, string $aktivitet): Response {
     // Kontrollera indata
     $kontrolleradId= filter_var($id, FILTER_VALIDATE_INT);
@@ -165,7 +169,7 @@ function uppdateraAktivitet(string $id, string $aktivitet): Response {
         $db = connectDb();
 
         // Förbered fråga
-        $stmt = $db->prepare("UPDATE aktiviteter SET namn = :aktivitet WHERE id = :id");
+        $stmt = $db->prepare("UPDATE aktiviteter SET Namn = :aktivitet WHERE id = :id");
         $stmt->execute([":aktivitet" => $kontrolleradAktivitet, ":id" => $kontrolleradId]);
 
         // Hantera svar
