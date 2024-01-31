@@ -267,8 +267,8 @@ function test_UppdateraAktivitet(): string {
         throw new Exception("Spara aktivitet för uppdatering misslyckades");
     }
 
-
-    if ($svar->getStatus()===400 && $svar->getContent()->result===true) {
+    var_dump($svar);
+    if ($svar->getStatus()===200 && $svar->getContent()->result===false) {
         $retur .= "<p class='ok'>Uppdatera post som redan finns med id=$nyttId misslyckades</p>";
     } else {
         $retur .= "<p class='error'>Uppdatera post som redan finns med id=$nyttId misslyckades<br>"
